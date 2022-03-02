@@ -16,5 +16,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
+// host: http://localhost:3000
+// api root folder
+// /api/v1/pacientes
+// /api/v1/expendiente
+// /api/v1/expediente/consultas
+
+
+
+
+
+
 
 module.exports = app;
