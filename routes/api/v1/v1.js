@@ -4,8 +4,7 @@ const { verifyApiHeaderToken } = require('./headerVerifyMiddleware');
 
 const { passport, jwtMiddleware } = require('./seguridad/jwtHelper');
 
-const pacientesRoutes = require('./pacientes/pacientes');
-const expedientesRoutes = require('./expedientes/expedientes');
+const medicamentosRoutes = require('./medicamentos/medicamentos');
 const seguridadRoutes = require('./seguridad/seguridad');
 
 router.use(passport.initialize());
@@ -13,9 +12,10 @@ router.use(passport.initialize());
 router.use('/seguridad', verifyApiHeaderToken, seguridadRoutes);
 //middlewares
 
-router.use('/pacientes',
+router.use('/medicamentos',
     verifyApiHeaderToken,
     jwtMiddleware,
-    pacientesRoutes);
-router.use('/expedientes', expedientesRoutes);
+    medicamentosRoutes);
+
+    
 module.exports = router;
